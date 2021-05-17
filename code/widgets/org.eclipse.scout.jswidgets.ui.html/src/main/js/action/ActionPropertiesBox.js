@@ -8,7 +8,7 @@
  * Contributors:
  *     BSI Business Systems Integration AG - initial API and implementation
  */
-import {GroupBox, MenubarBox, models} from '@eclipse-scout/core';
+import {GroupBox, MenuBarBox, models} from '@eclipse-scout/core';
 import ActionPropertiesBoxModel from './ActionPropertiesBoxModel';
 
 export default class ActionPropertiesBox extends GroupBox {
@@ -120,7 +120,7 @@ export default class ActionPropertiesBox extends GroupBox {
     } else if (event.propertyName === 'value' && event.source.id === 'ActionStyleField') {
       // ActionStyle may not be changed during run time officially, use this little hack to work around by rerendering the whole menu bar
       this.field.actionStyle = event.newValue;
-      if (this.field.parent instanceof MenubarBox) {
+      if (this.field.parent instanceof MenuBarBox) {
         let menuItems = this.field.parent.menuItems;
         this.field.parent.setMenuItems([]);
         this.field.parent.setMenuItems(menuItems);

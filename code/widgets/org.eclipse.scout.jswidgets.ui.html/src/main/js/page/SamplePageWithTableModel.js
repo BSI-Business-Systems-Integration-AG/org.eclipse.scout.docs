@@ -43,6 +43,17 @@ export default () => ({
     ],
     menus: [
       {
+        id: 'FormMenu',
+        objectType: 'FormMenu',
+        text: 'Form menu',
+        menuTypes: [
+          'Table.EmptySpace', 'Table.SingleSelection'
+        ],
+        form: {
+          objectType: 'jswidgets.MiniForm'
+        }
+      },
+      {
         id: 'AddRowMenu',
         objectType: 'Menu',
         text: '${textKey:AddRow}',

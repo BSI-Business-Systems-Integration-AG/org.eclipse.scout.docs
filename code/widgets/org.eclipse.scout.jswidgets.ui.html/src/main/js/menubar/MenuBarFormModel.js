@@ -63,7 +63,22 @@ export default () => ({
                   {
                     id: 'SubSubMenu2',
                     objectType: 'Menu',
-                    text: 'Sub Sub Menu 2'
+                    text: 'Sub Sub Menu 2',
+                    childActions: [{
+                      id: 'SubSubSubMenu1',
+                      objectType: 'Menu',
+                      iconId: icons.WORLD,
+                      text: 'Menu with Icon'
+                    }, {
+                      id: 'SubSubSubMenuMenu2',
+                      objectType: 'Menu',
+                      text: 'More',
+                      childActions: [{
+                        id: 'SubSubSubSubMenu1',
+                        objectType: 'Menu',
+                        text: 'Deep Menu'
+                      }]
+                    }]
                   }
                 ]
               }

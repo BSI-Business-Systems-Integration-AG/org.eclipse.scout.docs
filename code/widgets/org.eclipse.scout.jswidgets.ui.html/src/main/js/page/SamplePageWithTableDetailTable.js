@@ -12,6 +12,14 @@ export default class SamplePageWithTableDetailTable extends Table {
     this.widget('AddRowMenu').on('action', this._onAddRowMenuAction.bind(this));
     this.widget('AddManyMenu').on('action', this._onAddManyMenuAction.bind(this));
     this.widget('DeleteRowMenu').on('action', this._onDeleteRowMenuAction.bind(this));
+    let formMenu = this.widget('FormMenu');
+    formMenu.on('propertyChange:selected', event => {
+      if (event.newValue && !formMenu.form) {
+        formMenu.setForm(scout.create('jswidgets.MiniForm', {
+          parent: formMenu
+        }));
+      }
+    });
   }
 
   createTileForRow(row) {
