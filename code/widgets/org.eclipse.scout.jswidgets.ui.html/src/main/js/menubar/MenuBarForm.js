@@ -45,28 +45,9 @@ export default class MenuBarForm extends Form {
       this._onReplaceChildActionsClick(event, this.hierarchicalMenu);
     });
 
-    let menu1 = this.widget('Menu1');
-    menu1.on('action', this._onMenuAction.bind(this));
-    menu1.on('propertyChange', this._onMenuPropertyChange.bind(this));
-
-    let menu2 = this.widget('Menu2');
-    menu2.on('action', this._onMenuAction.bind(this));
-    menu2.on('propertyChange', this._onMenuPropertyChange.bind(this));
-
-    // Add event handlers to the hierarchical menu and its sub menus
     this.hierarchicalMenu = this.widget('HierarchicalMenu');
-    this.hierarchicalMenu.on('action', this._onMenuAction.bind(this));
-    this.hierarchicalMenu.on('propertyChange', this._onMenuPropertyChange.bind(this));
-    this.hierarchicalMenu.visitChildren(menu => {
-      if (menu instanceof Menu) {
-        menu.on('action', this._onMenuAction.bind(this));
-        menu.on('propertyChange', this._onMenuPropertyChange.bind(this));
-      }
-    });
 
     let formMenu = this.widget('FormMenu');
-    formMenu.on('action', this._onMenuAction.bind(this));
-    formMenu.on('propertyChange', this._onMenuPropertyChange.bind(this));
     formMenu.on('propertyChange:selected', event => {
       if (event.newValue && !formMenu.form) {
         formMenu.setForm(scout.create('jswidgets.MiniForm', {
@@ -76,6 +57,17 @@ export default class MenuBarForm extends Form {
     });
 
     let detailBox = this.widget('DetailBox');
+    let menus = detailBox.menus;
+
+    menus.forEach(menu => {
+      menu.on('action', this._onMenuAction.bind(this));
+      menu.on('propertyChange', this._onMenuPropertyChange.bind(this));
+      menu.visitChildMenus(menu => {
+        menu.on('action', this._onMenuAction.bind(this));
+        menu.on('propertyChange', this._onMenuPropertyChange.bind(this));
+      });
+    });
+
     this.widget('Actions.AddGroupBoxMenuBox').setField(detailBox);
     this.widget('Actions.DeleteGroupBoxMenuBox').setField(detailBox);
     this._fillSelectedMenuField();
