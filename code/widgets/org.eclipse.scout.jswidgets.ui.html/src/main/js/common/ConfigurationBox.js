@@ -22,6 +22,7 @@ export default class ConfigurationBox extends TabBox {
 
     this.toggleMenu = scout.create('Menu', {
       parent: this,
+      cssClass: 'configuration-box-toggle-menu',
       menuTypes: [
         'TabBox.Header'
       ]
@@ -51,9 +52,9 @@ export default class ConfigurationBox extends TabBox {
   }
 
   _updateToggleIcon() {
-    let iconId = icons.ANGLE_DOWN_BOLD;
+    let iconId = icons.ANGLE_DOWN;
     if (!this.tabItems[0].expanded) {
-      iconId = icons.ANGLE_UP_BOLD;
+      iconId = icons.ANGLE_UP;
     }
     this.toggleMenu.setIconId(iconId);
   }

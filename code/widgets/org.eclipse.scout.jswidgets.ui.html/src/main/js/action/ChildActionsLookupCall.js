@@ -27,19 +27,21 @@ export default class ChildActionsLookupCall extends StaticLookupCall {
   setAction(action) {
     if (this.action) {
       this.action.off('propertyChange', this._actionPropertyChangeHandler);
-      this.action.childActions.forEach(function(action) {
-        action.off('propertyChange', this._childActionPropertyChangeHandler);
-      }, this);
+      this.action.childActions.forEach(action => action.off('propertyChange', this._childActionPropertyChangeHandler));
     }
     this.action = action;
-    this.action.on('propertyChange', this._actionPropertyChangeHandler);
-    this.action.childActions.forEach(function(action) {
-      action.on('propertyChange', this._childActionPropertyChangeHandler);
-    }, this);
+    if (this.action) {
+      this.action.on('propertyChange', this._actionPropertyChangeHandler);
+      this.action.childActions.forEach(action => action.on('propertyChange', this._childActionPropertyChangeHandler));
+    }
     this._rebuildData();
   }
 
   _rebuildData() {
+    if (!this.action) {
+      this.data = [];
+      return;
+    }
     this.data = this.action.childActions.map(menu => {
       return [menu, menu.text];
     });

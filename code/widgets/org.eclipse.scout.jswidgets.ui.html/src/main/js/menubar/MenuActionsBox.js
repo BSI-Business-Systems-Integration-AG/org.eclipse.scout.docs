@@ -25,19 +25,6 @@ export default class MenuActionsBox extends GroupBox {
 
   _init(model) {
     super._init(model);
-
-    this._setMenu(this.menu);
-  }
-
-  setMenu(menu) {
-    this.setProperty('menu', menu);
-  }
-
-  _setMenu(menu) {
-    this._setProperty('menu', menu);
-    if (!this.menu) {
-      return;
-    }
     let insertMenuButton = this.widget('InsertMenuButton');
     insertMenuButton.on('click', this._onInsertMenuClick.bind(this));
 
@@ -46,6 +33,16 @@ export default class MenuActionsBox extends GroupBox {
 
     let menuToDeleteField = this.widget('MenuToDeleteField');
     menuToDeleteField.setLookupCall(new ChildActionsLookupCall(this.menu));
+    this._setMenu((this.menu));
+  }
+
+  setMenu(menu) {
+    this.setProperty('menu', menu);
+  }
+
+  _setMenu(menu) {
+    this._setProperty('menu', menu);
+    this.widget('MenuToDeleteField').lookupCall.setAction(this.menu);
   }
 
   _onInsertMenuClick(event) {
