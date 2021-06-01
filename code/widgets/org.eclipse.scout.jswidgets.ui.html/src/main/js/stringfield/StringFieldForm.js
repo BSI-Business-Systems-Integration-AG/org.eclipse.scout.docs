@@ -101,7 +101,7 @@ export default class StringFieldForm extends Form {
   _onMultilineTextPropertyChange(event) {
     if (event.propertyName === 'value') {
       let field = this.widget('StringField');
-      field.multilineText = event.newValue;
+      field._setMultilineText(event.newValue);
       field.parent.rerenderControls();
       // Validate layout immediately to prevent flickering
       field.parent.htmlBody.validateLayoutTree();

@@ -107,6 +107,7 @@ export {default as RadioButtonGroupForm} from './radiobuttongroup/RadioButtonGro
 export {default as RestForm} from './rest/RestForm';
 export {default as SequenceBoxForm} from './sequencebox/SequenceBoxForm';
 export {default as StringFieldForm} from './stringfield/StringFieldForm';
+export {default as MultilineStringFieldForm} from './stringfield/MultilineStringFieldForm';
 export {default as StringFormatLookupCall} from './stringfield/StringFormatLookupCall';
 export {default as icons} from './style/icons';
 export {default as DynamicTab} from './tabbox/DynamicTab';

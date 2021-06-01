@@ -346,12 +346,22 @@ export default () => ({
     },
     {
       objectType: 'PageWithNodes',
-      leaf: true,
       text: 'String Field',
+      expanded: true,
       detailForm: {
         objectType: 'jswidgets.StringFieldForm'
       },
-      detailTableVisible: false
+      childNodes: [
+        {
+          objectType: 'PageWithNodes',
+          leaf: true,
+          text: 'Multiline String Field',
+          detailForm: {
+            objectType: 'jswidgets.MultilineStringFieldForm'
+          },
+          detailTableVisible: false
+        }
+      ]
     },
     {
       objectType: 'PageWithNodes',
