@@ -142,17 +142,28 @@ So if you prefer to use a different logo for the info form, just extend the info
 
 In case you don't use SVG logos yet, you should consider doing so to prevent blurry logos.
 
-== LESS Variables
+== Style
+=== LESS Variables
 
 - @active-inverted-background-color -> @selected-background-color
 - @active-inverted-color -> @selected-color
 - @navigation-background-color -> @desktop-navigation-background-color
 - @navigation-color -> @desktop-navigation-color
 - @outline-title-margin-left/right -> @outline-title-padding-left/right
+- @group-box-title-margin-top -> @group-box-header-margin-top
+- @group-box-title-border-width -> @group-box-header-border-width
 
 Notes:
 @desktop-navigation-background-color now points to @desktop-header-background-color;
 Instead of customizing the navigation background color it is suggested to now customize the header background color.
+
+=== Rules
+- .menubox -> .menubar-box
+- .group-box-title -> .group-box-header > .title
+- border-bottom of group-box-title -> .group-box-header > .bottom-border
+- .tab-box-bottom-border -> .bottom-border
+
+// TODO cgu describe: button, menu styles
 
 == Browser Field
 
