@@ -59,7 +59,7 @@ export default class GroupBoxAddMenuBox extends GroupBox {
   }
 
   _onAddMenuButtonClick(event) {
-    let label = this.labelField.value || 'Dynamic Menu ' + this.dynamicMenuCounter;
+    let label = this.labelField.value || '';
     this.dynamicMenuCounter++;
     let newMenu = scout.create(scout.nvl(this.widget('MenuBarItemType').value, 'Menu'), {
       parent: this.field,
