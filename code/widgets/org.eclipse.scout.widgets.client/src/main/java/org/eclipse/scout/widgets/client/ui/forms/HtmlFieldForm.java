@@ -193,6 +193,31 @@ public class HtmlFieldForm extends AbstractForm implements IAdvancedExampleForm 
         return TriState.FALSE;
       }
 
+      @Order(5)
+      @ClassId("99e3f0b2-92b5-4cab-b102-750beefd6bf1")
+      public class SelectableField extends AbstractBooleanField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return "Selectable";
+        }
+
+        @Override
+        protected boolean getConfiguredLabelVisible() {
+          return false;
+        }
+
+        @Override
+        protected void execChangedValue() {
+          getHtmlField().setSelectable(isChecked());
+        }
+
+        @Override
+        protected void execInitField() {
+          setChecked(getHtmlField().isSelectable());
+        }
+      }
+
       @Order(10)
       @ClassId("79efda24-776b-477c-9eec-5dd53704a566")
       public class ScrollBarEnabledField extends AbstractBooleanField {
