@@ -20,7 +20,7 @@ public class Icons extends AbstractIcons {
   public static final String OrganizationLarge = "house";
   public static final String Organization = "font:awesomeIcons \uf015";
   public static final String User = "user";
-  public static final String Contacts = AbstractIcons.CategoryBold;
+  public static final String Contacts = AbstractIcons.Category;
   public static final String IndustryLine = "font:lineAwesomeIcons \uf249";
   public static final String MaleLine = "font:lineAwesomeIcons \uf27b";
 }

@@ -165,6 +165,39 @@ Instead of customizing the navigation background color it is suggested to now cu
 
 // TODO cgu describe: button, menu styles
 
+=== Icons
+TODO describe icon style changes
+
+Some icons have been removed because they are not used by Scout itself anymore.
+If you need these icons, please add them to your own icon library.
+If you don't already have a custom icon library, please see our guide on how to create one:
+https://eclipsescout.github.io/11.0/technical-guide.html#icons
+The icons from Scout can be found here: https://git.eclipse.org/c/scout/org.eclipse.scout.rt.git/tree/org.eclipse.scout.rt.ui.html/src/icons?h=releases/11.0
+There you also find a `selection.json` that can be used to import the icons to https://icomoon.io/app[IcoMoon].
+
+- MENU_BOLD (uF0C9)
+- LIST_UL_BOLD (uF0CA)
+- LIST_OL_BOLD (uF0CB)
+- GRAPH_BOLD (uE023)
+- CATEGORY_BOLD (uE024)
+- ELLIPSIS-V-BOLD / VERTICAL_DOTS (uE040)
+- SPINNER (uE044)
+- ANGLE-DOUBLE-LEFT-BOLD (uF100)
+- ANGLE-DOUBLE-RIGHT-BOLD (uF101)
+- ANGLE-DOUBLE-UP-BOLD (uF102)
+- ANGLE-DOUBLE-DOWN-BOLD (uF103)
+- BOLD (uE051)
+- ITALIC (uE052)
+- UNDERLINE (uE053)
+- STRIKETHROUGH (uE054)
+- LIST-UL (uE055)
+- LIST-OL (uE056)
+- LIGHTBULB_OFF (uE057)
+- LIGHTBULB_ON (uE058)
+
+The following icons have been renamed
+- EXCLAMATION_MARK -> EXCLAMATION_MARK_BOLD
+
 == Browser Field
 
 The type of the `data` argument for the callback `execPostMessage` was changed from _String_ to _Object_.

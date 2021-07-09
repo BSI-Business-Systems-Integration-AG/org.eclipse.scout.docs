@@ -76,7 +76,7 @@ For this, we perform the following modifications to class `WorkOutline`.
 * Rename the class package to `org.eclipse.scout.contacts.client.contact`
 * Rename the class to `ContactOutline`
 * Change the outline title to "Contacts"
-* Change the outline icon to `Icons.CategoryBold`
+* Change the outline icon to `Icons.Category`
 
 To quickly find class `WorkOutline` we first open the [wizard]_Open Type_ dialog from the Eclipse IDE by hitting kbd:[Ctrl+Shift+T] and enter "workoutline" into the search field as shown in <<img-eclipse_open_type>>.
 In the result list, we select the desired class and click the btn:[OK] button to open the file `WorkOutline.java` in the Java editor of the Eclipse IDE.
@@ -113,7 +113,7 @@ To enter a new translated text we double click on the proposal [element]_New tex
 .Use the Scout new entry wizard to add translated texts to the application.
 image::{imgsdir}/sdk_new_text_entry_contact_wizard.png[]
 
-As the last modification we change the return value of method `getConfiguredIconId` to value `Icons.CategoryBold` and end with the code shown in <<lst-contacts_outline>>.
+As the last modification we change the return value of method `getConfiguredIconId` to value `Icons.Category` and end with the code shown in <<lst-contacts_outline>>.
 
 To conclude the modifications we must get rid of the faulty import statement.
 To do this we could in principle press kbd:[Ctrl+Shift+O] to organize the imports automatically.
